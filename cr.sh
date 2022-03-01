@@ -18,7 +18,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-DEFAULT_CHART_RELEASER_VERSION=v1.3.0
+DEFAULT_CHART_RELEASER_VERSION=v1.3.1
 
 show_help() {
 cat << EOF
@@ -190,7 +190,7 @@ install_chart_releaser() {
         mkdir -p "$cache_dir"
 
         echo "Installing chart-releaser..."
-        curl -sSLo cr.tar.gz "https://github.com/helm/chart-releaser/releases/download/$version/chart-releaser_${version#v}_linux_amd64.tar.gz"
+        curl -sSLo cr.tar.gz "https://github.com/caleblloyd/helm-chart-releaser/releases/download/$version/chart-releaser_${version#v}_linux_amd64.tar.gz"
         tar -xzf cr.tar.gz -C "$cache_dir"
         rm -f cr.tar.gz
     fi
